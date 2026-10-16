@@ -31,7 +31,7 @@ def limpiar_dataset():
         'modalidad', 'tipo_programa'
     ]
 
-    print("🧹 Limpiando textos y aplicando formato Title Case...")
+    print("Limpiando textos y aplicando formato Title Case...")
     for col in cols_texto:
         # Convertir a texto por si hay valores numéricos nulos camuflados
         df[col] = df[col].astype(str)
@@ -39,7 +39,7 @@ def limpiar_dataset():
         # Reemplazar valores de sistema (ej: "** seleccionar**", "** desconocida **")
         df[col] = df[col].replace(
             to_replace=[r'\*\*.*seleccionar.*\*\*', r'\*\*.*desconocid.*\*\*'], 
-            value='No reportado', 
+            value='No reportado',
             regex=True
         )
         
